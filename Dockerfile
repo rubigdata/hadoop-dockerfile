@@ -13,7 +13,7 @@ RUN \
   apt-get update && \
   apt-get install -y wget rsync ssh nano && \
   export TERM=xterm && \
-  service ssh start && \
   ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa && \
   cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
-  chmod 0600 ~/.ssh/authorized_keys
+  chmod 0600 ~/.ssh/authorized_keys && \
+  echo export PATH=$PATH:/opt/docker/hadoop-2.7.3/bin:/opt/docker/hadoop-2.7.3/sbin >> ${HOME}/.bashrc  
