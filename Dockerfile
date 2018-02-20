@@ -3,10 +3,10 @@ FROM andypetrella/spark-notebook:0.7.0-scala-2.11.8-spark-2.1.0-hadoop-2.7.3-wit
 
 
 # Make port 80 available to the world outside this container
-EXPOSE 9001
-EXPOSE 4040-4045
+EXPOSE 9001 4040-4045
 
-ADD hadoop-2.7.3.tar.gz .
+ADD hadoop-2.7.3.tar.gz ./
+ADD core-site.xml hdfs-site.xml hadoop-2.7.3/etc/hadoop/
 
 RUN \ 
   echo export JAVA_HOME=${JAVA_HOME} >> ${HOME}/.bashrc && \
@@ -17,6 +17,3 @@ RUN \
   ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa && \
   cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
   chmod 0600 ~/.ssh/authorized_keys
-
-COPY core-site.xml hadoop-2.7.3/etc/hadoop/
-COPY hdfs-site.xml hadoop-2.7.3/etc/hadoop/
