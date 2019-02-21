@@ -1,3 +1,9 @@
+__WARNING:__
+
+Old repository, imported into https://github.com/rubigdata-dockerhub/hadoop-dockerfile/ for further development.
+
+_To be removed once transition completed._
+
 # Hadoop plus Spark Notebook Dockerfile
 
 Dockerfile that extends Spark Notebook with the necessary packages for running Hadoop in assignment 2 of the RU Big Data course.
